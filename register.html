@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg,#0b1c2c 0%,#163a5f 75%,#1a5f7a 100%);
+    }
+    .box{
+        position: relative;
+        width: 800px;
+        height: 400px;
+        background-color: aliceblue;
+        box-shadow:0 4px 12px black;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+    form{
+        position: absolute;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        padding: 50px 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 0.6s;
+    }
+    .login{
+        left: 0;
+    }
+    .registe{
+        right: 0;
+    }
+    form h2{
+        margin-bottom: 24px;
+        text-align: center;
+    }
+    input{
+        margin: 12px;
+        padding: 12px 14px;
+        height: 35px;
+        align-items: center;
+        border:1px solid darkgrey;
+        border-radius: 3px;
+        outline: none;
+        font-size: 15px;
+        width: 295px;
+        align-self: center;
+    }
+    input:focus{
+        border-color: #163a5f;
+    }
+    .btns{
+        margin-top: 8px;
+        padding: 12px;
+        border: none;
+        background-color: #163a5f;
+        border-radius: 3px;
+        color: aliceblue;
+        cursor: pointer;
+        width: 295px;
+        align-self: center;
+    }
+    .slide{
+        position: absolute;
+        background-color: #163a5f;
+        left: 50%;;
+        width: 50%;
+        top: 0;
+        height: 100%;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        color: aliceblue;
+        transition: 0.5s;
+    }
+    .slide h1{
+        font-size: 36px;
+        margin-bottom: 24px;
+        letter-spacing: 5px;
+    }
+    .slide p{
+        margin-bottom: 24px;
+        letter-spacing: 4px;
+    }
+    .btn{
+        padding: 10px;
+        width: 150px;
+        align-self: center;
+        background-color: #163a5f;
+        color: aliceblue;
+        border-radius: 3px;
+        cursor: pointer;
+        border:2px solid #fff;
+        border-radius: 6px;
+        font-size: 15px;
+    }
+    .slide button:hover{
+        background: rgba(255, 255, 255, 0.2);
+    }
+    .box.to-register .slide{
+        left: 0;
+        background-color: #1a5f7a;
+    }
+</style>
+<body>
+    <div class="box">
+        <div class="slide">
+            <h1>欢迎</h1>
+            <p id="tip">还没有账号？</p>
+            <button class="btn" id="btn">去注册</button>
+        </div>
+       <form class="login" id="login">
+        <h2>登录账号</h2>
+        <input type="text" placeholder="用户名" required>
+        <input type="password" placeholder="密码" required>
+        <div>
+         <label><input type="checkbox">
+          我已阅读并同意
+            <a href="">服务协议</a>和
+            <a href="">隐私条约</a>
+         </label>
+        </div>
+        <button class="btns">登录</button>
+       </form>
+       <form class="registe" id="registe">
+        <h2>注册账号</h2>
+        <input type="text" placeholder="账号" required>
+        <input type="password" placeholder="密码" required>
+        <input type="password" placeholder="再次确认密码" required>
+        <div>
+         <label><input type="checkbox">
+          我已阅读并同意
+            <a href="">服务协议</a>和
+            <a href="">隐私条约</a>
+         </label>
+        </div>
+        <button class="btns">注册</button>
+       </form>
+    </div>
+    <script src="./javascript.js"></script>
+</body>
+</html>
